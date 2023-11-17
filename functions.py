@@ -10,7 +10,8 @@ def clean_screen():
     else:
         os.system('clear')
 
-difficulty = {
+# difficulty constant
+DIFFICULTY = {
     'easy' : 10,
     'hard' : 5
 }
@@ -52,12 +53,12 @@ def play_game():
     while not get_right_difficulty:
         difficulty_choice = input("\nChoose a difficulty. Type 'easy' or 'hard': ").lower()
 
-        if difficulty_choice not in difficulty.keys():
+        if difficulty_choice not in DIFFICULTY.keys():
             print("Invalid input.")
         else:
             get_right_difficulty = True
     
-    attempts = difficulty[difficulty_choice]
+    attempts = DIFFICULTY[difficulty_choice]
 
     win_game = False  
 
